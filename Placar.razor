@@ -1,0 +1,31 @@
+@page "/placar"
+
+<h1>Pontuação: @pontos</h1>
+
+<div class="mt-3">
+    <button class="btn btn-success me-2" @onclick="SomarPonto">Somar 1 Ponto</button>
+    <button class="btn btn-warning me-2" @onclick="SubtrairPonto">Subtrair 1 Ponto</button>
+    <button class="btn btn-danger" @onclick="ZerarPlacar">Zerar Placar</button>
+</div>
+
+@code {
+    private int pontos = 0;
+
+    private void SomarPonto()
+    {
+        pontos++;
+    }
+
+    private void SubtrairPonto()
+    {
+        if (pontos > 0)
+        {
+            pontos--;
+        }
+    }
+
+    private void ZerarPlacar()
+    {
+        pontos = 0;
+    }
+}
